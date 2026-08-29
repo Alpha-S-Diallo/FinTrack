@@ -24,8 +24,6 @@ def select_all_transactions():
     return cur.fetchall()
 
 
-
-   
 def select_highest_transacition():
     cur.execute("SELECT * FROM TRANSACTION ORDER BY AMOUNT DESC")
 
