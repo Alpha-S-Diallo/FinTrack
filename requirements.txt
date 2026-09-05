@@ -1,5 +1,7 @@
-flask 
+flask
+flask-cors
 plaid
-dotenv 
+dotenv
 plaid-python
+requsests
 

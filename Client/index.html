@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinTrack</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">FT</span>
+    <span class="brand-name">FinTrack</span>
+  </div>
+  <div class="topbar-right">
+    <div class="bank-chips" id="bank-chips"></div>
+    <button class="btn-primary" id="connect-btn">+ Connect bank</button>
+  </div>
+</header>
+
+<main class="content">
+
+  <section id="empty-state" class="empty-state" hidden>
+    <h1>Connect your first bank</h1>
+    <p>Link an account to start seeing your balances, spending trends, and transactions here.</p>
+    <button class="btn-primary" id="empty-connect-btn">+ Connect bank</button>
+  </section>
+
+  <div id="dashboard" hidden>
+
+    <section class="kpi-row" id="kpi-row"></section>
+
+    <section class="charts-row">
+      <div class="card chart-card">
+        <div class="card-head">
+          <div>
+            <h2>Spending trend</h2>
+            <p class="card-sub" id="trend-sub">Monthly spend</p>
+          </div>
+        </div>
+        <div class="chart-wrap" id="trend-wrap">
+          <svg id="trend-svg" viewBox="0 0 600 220" preserveAspectRatio="none"></svg>
+          <div class="chart-tooltip" id="trend-tooltip" hidden></div>
+        </div>
+      </div>
+
+      <div class="card cat-card">
+        <div class="card-head">
+          <div>
+            <h2>By category</h2>
+            <p class="card-sub">Where it's going</p>
+          </div>
+        </div>
+        <div class="cat-list" id="cat-list"></div>
+      </div>
+    </section>
+
+    <section class="card table-card">
+      <div class="card-head">
+        <div>
+          <h2>Recent transactions</h2>
+          <p class="card-sub" id="txn-sub">Latest activity</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th class="num">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="txn-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
