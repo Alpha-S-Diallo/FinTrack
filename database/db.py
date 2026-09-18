@@ -30,6 +30,24 @@ def create_main_table():
     con.commit()
     con.close()
 
+def create_budget_tables():
+    con = _connect()
+    """con.execute(
+        "CREATE TABLE IF NOT EXISTS BUDGETS ("
+        "ID INTEGER PRIMARY KEY AUTOINCREMENT, "
+        "CATEGORY VARCHAR(20) NOT NULL, "
+        "AMOUNT REAL NOT NULL"
+        ")"
+    )
+"""
+def get_budget_table_sum():
+    con = _connect()
+    con.execute = ("Select SUM(AMOUNT) FROM FUN_MONEY")
+    FUN_SUM = con.fetchone()
+
+
+
+
 
 def create_bank_table():
     con = _connect()
